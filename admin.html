@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Panel privado · Cenita #18</title>
+<link href="https://fonts.googleapis.com/css2?family=Yesteryear&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css">
+<style>
+body{background:var(--lila);padding:1rem}.wrap{max-width:900px;margin:0 auto}
+.card{background:var(--papel);border-radius:6px;padding:1.2rem;box-shadow:0 8px 16px rgba(60,20,80,.25);margin-bottom:1rem;border:1px solid #fff}
+h1.sticker-txt{font-size:2.2rem;margin:.5rem 0 1rem}
+.login{max-width:380px;margin:12vh auto 0}.login input{margin-bottom:.7rem}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.7rem}
+.stat{background:#fff;border:2px solid var(--lavanda);border-radius:6px;padding:.8rem;text-align:center}
+.stat b{display:block;font:500 2.2rem var(--serif);color:var(--malva)}.stat span{font-size:.8rem}
+.tools{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:.8rem}.tools input,.tools select{flex:1 1 140px;font:400 .95rem var(--sans);padding:.6rem;border:2px solid var(--lavanda);border-radius:6px;background:#fff;min-height:44px}
+.tbl{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:.9rem}th,td{padding:.6rem;text-align:left;border-bottom:1px solid #e3d9ea}
+.pill{padding:.15rem .6rem;border-radius:99px;font-size:.78rem}.ok{background:#e4f5e8;color:#276a3a}.no{background:#fbe3e9;color:#9b2c4a}
+.sm{padding:.4rem .7rem;min-height:36px;font-size:.78rem;margin:0 .2rem 0 0;display:inline-block}
+.vacio{text-align:center;padding:2rem;font:1.2rem var(--serif)}
+dialog{border:0;border-radius:8px;padding:1.3rem;max-width:min(92vw,400px);background:var(--papel);box-shadow:0 12px 40px rgba(0,0,0,.35)}dialog::backdrop{background:rgba(70,30,90,.45)}
+dialog label{display:block;margin-bottom:.8rem;font-size:.85rem}dialog input,dialog select{width:100%;padding:.6rem;border:2px solid var(--lavanda);border-radius:6px;font:1rem var(--sans);margin-top:.2rem}
+.fila{display:flex;gap:.5rem;justify-content:flex-end}.fila .btn{margin:0}
+</style></head><body><div class="wrap">
+<section id="vLogin" class="card login"><h1 class="sticker-txt">Panel privado</h1>
+ <form id="fLogin"><input id="email" type="email" placeholder="Correo" autocomplete="username" required>
+ <input id="pass" type="password" placeholder="Contraseña" autocomplete="current-password" required>
+ <p class="err" id="eLogin" role="alert"></p><button class="btn btn-enviar" type="submit">Entrar</button></form></section>
+<section id="vPanel" hidden>
+ <div class="tools" style="justify-content:space-between;align-items:center"><h1 class="sticker-txt" style="margin:0">Confirmaciones</h1><button class="btn btn-sec sm" id="salir">Cerrar sesión</button></div>
+ <div class="card"><div class="stats">
+  <div class="stat"><b id="sPersonas">0</b><span>personas asistirán</span></div>
+  <div class="stat"><b id="sConf">0</b><span>invitados confirmaron</span></div>
+  <div class="stat"><b id="sNo">0</b><span>no asistirán</span></div>
+  <div class="stat"><b id="sRes">0</b><span>respuestas en total</span></div></div></div>
+ <div class="card"><div class="tools">
+  <input id="q" type="search" placeholder="Buscar por nombre">
+  <select id="fil"><option value="">Todos los estados</option><option value="confirmado">Confirmados</option><option value="no_asistira">No asistirán</option></select>
+  <select id="ord"><option value="fecha-desc">Más recientes</option><option value="fecha-asc">Más antiguos</option><option value="nombre-asc">Nombre A–Z</option><option value="nombre-desc">Nombre Z–A</option></select>
+  <button class="btn sm" id="csv" style="margin:0">Exportar CSV</button></div>
+  <div class="tbl"><table><thead><tr><th>Nombre</th><th>Estado</th><th>Personas</th><th>Fecha</th><th>Acciones</th></tr></thead><tbody id="tb"></tbody></table></div>
+  <p class="vacio" id="vacio" hidden></p></div>
+</section></div>
+<dialog id="dEdit"><form method="dialog" id="fEdit"><h2 class="script" style="color:var(--malva);font-weight:400;margin-bottom:.8rem">Corregir respuesta</h2>
+ <label>Nombre<input id="eN" maxlength="80"></label>
+ <label>Estado<select id="eS"><option value="confirmado">Confirmado</option><option value="no_asistira">No asistirá</option></select></label>
+ <label>Personas<input id="eT" type="number" min="0" step="1"></label><p class="err" id="eErr"></p>
+ <div class="fila"><button class="btn sm" value="x" formnovalidate>Cancelar</button><button class="btn btn-enviar sm" id="eOk" type="button">Guardar</button></div></form></dialog>
+<dialog id="dDel"><p id="dDelT" style="margin-bottom:1rem"></p><div class="fila"><button class="btn sm" id="dNo">Cancelar</button><button class="btn btn-enviar sm" id="dSi">Eliminar</button></div></dialog>
+<script src="firebase-config.js"></script>
+<script type="module" src="admin.js"></script></body></html>

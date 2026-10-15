@@ -1,0 +1,9 @@
+{
+  "firestore": { "rules": "firestore.rules" },
+  "hosting": {
+    "public": ".",
+    "ignore": ["firebase.json", "firestore.rules", "README.md", "**/.*", "**/node_modules/**"],
+    "headers": [{ "source": "/admin.html", "headers": [{ "key": "X-Robots-Tag", "value": "noindex" }] }],
+    "rewrites": [{ "source": "/admin", "destination": "/admin.html" }]
+  }
+}

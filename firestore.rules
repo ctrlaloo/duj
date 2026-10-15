@@ -1,0 +1,26 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{db}/documents {
+    // Pega aquí el UID de tu cuenta admin (Authentication > Usuarios)
+    function isAdmin() { return request.auth != null && request.auth.uid == 'REEMPLAZA_UID_ADMIN'; }
+    function isGuest(uid) { return request.auth != null && request.auth.uid == uid
+      && request.auth.token.firebase.sign_in_provider == 'anonymous'; }
+    function valido(d) {
+      return d.keys().hasOnly(['name','status','total','createdAt','updatedAt'])
+        && d.name is string && d.name.size() >= 2 && d.name.size() <= 80
+        && d.status in ['confirmado','no_asistira'] && d.total is int
+        && ((d.status == 'confirmado' && d.total >= 1 && d.total <= 1000)
+         || (d.status == 'no_asistira' && d.total == 0))
+        && d.updatedAt == request.time;
+    }
+    match /rsvps/{uid} {
+      allow get: if isAdmin() || isGuest(uid);
+      allow list: if isAdmin();
+      allow create: if isGuest(uid) && valido(request.resource.data)
+        && request.resource.data.createdAt == request.time;
+      allow update: if (isGuest(uid) || isAdmin()) && valido(request.resource.data)
+        && request.resource.data.createdAt == resource.data.createdAt;
+      allow delete: if isAdmin();
+    }
+  }
+}

@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cenita de cumpleaños #18</title>
+<meta name="description" content="Estás invitado a mi cenita de cumpleaños #18 · 23 de octubre de 2026">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Yesteryear&family=Pacifico&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css?v=5">
+</head>
+<body>
+<script>document.documentElement.classList.add("js")</script>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <filter id="glitter" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="4" result="n"/>
+      <feColorMatrix in="n" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 9 -5.2" result="s"/>
+      <feComposite in="s" in2="SourceAlpha" operator="in" result="sp"/>
+      <feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="sp"/></feMerge>
+    </filter>
+    <linearGradient id="gPink" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f9b6dc"/><stop offset="1" stop-color="#ee86c2"/></linearGradient>
+    <linearGradient id="gSilver" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e4e2e8"/><stop offset="1" stop-color="#bdb9c4"/></linearGradient>
+    <linearGradient id="gLila" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c9aee0"/><stop offset="1" stop-color="#a98bc9"/></linearGradient>
+    <linearGradient id="gSatin" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3eafa"/><stop offset=".5" stop-color="#dcc8ee"/><stop offset="1" stop-color="#c3a6df"/></linearGradient>
+    <radialGradient id="gBalloon" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#fff2f6"/><stop offset=".45" stop-color="#f6bccd"/><stop offset="1" stop-color="#e293ab"/></radialGradient>
+    <symbol id="star" viewBox="0 0 100 100"><path d="M50 4l13 31 33 3-25 22 8 33-29-18-29 18 8-33L4 38l33-3z" stroke-linejoin="round"/></symbol>
+    <symbol id="bow" viewBox="0 0 200 130">
+      <path d="M100 62C70 8 14 2 8 30c-4 26 32 52 92 32z" fill="url(#gSatin)" stroke="#b895d8" stroke-width="2"/>
+      <path d="M100 62c30-54 86-60 92-32 4 26-32 52-92 32z" fill="url(#gSatin)" stroke="#b895d8" stroke-width="2"/>
+      <path d="M96 66c-26 8-44 34-52 60 18 2 38-20 56-52zM104 66c26 8 44 34 52 60-18 2-38-20-56-52z" fill="url(#gSatin)" stroke="#b895d8" stroke-width="2"/>
+      <path d="M30 30c20 2 40 14 66 32M170 30c-20 2-40 14-66 32" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="3"/>
+      <rect x="84" y="46" width="32" height="34" rx="14" fill="url(#gLila)" stroke="#a98bc9" stroke-width="2"/>
+    </symbol>
+    <symbol id="heart" viewBox="0 0 120 170">
+      <path d="M60 140C14 100 4 70 6 48 8 20 34 10 52 22c5 3 7 6 8 9 1-3 3-6 8-9 18-12 44-2 46 26 2 22-8 52-54 92z" fill="url(#gBalloon)"/>
+      <path d="M22 40c4-12 14-16 22-12" stroke="#fff" stroke-opacity=".85" stroke-width="6" stroke-linecap="round" fill="none"/>
+      <path d="M54 140l6 10-6 4 6 6" stroke="#e8a3b8" fill="none" stroke-width="2"/><path d="M60 160c-6 6 4 8-2 10" stroke="#fff" stroke-opacity=".7" fill="none"/>
+    </symbol>
+  </defs>
+</svg>
+
+<main class="lienzo">
+
+  <!-- ===== PORTADA ===== -->
+  <section class="portada" id="portada">
+    <div class="hoja" data-tear><div class="papel-in"></div></div>
+    <svg class="sticker bow bow-tl float"><use href="#bow"/></svg>
+    <div class="sticker disco-w float">
+      <div class="disco"><svg class="bow bow-disco"><use href="#bow"/></svg></div>
+      <svg class="st s1 pk"><use href="#star"/></svg><svg class="st s2 pk"><use href="#star"/></svg><svg class="st s3 pk"><use href="#star"/></svg><svg class="st s4 pk"><use href="#star"/></svg>
+    </div>
+    <h1 class="titulo-portada reveal"><span class="t1">Cenita de</span><span class="t2">cumpleaños</span><span class="t3">#18</span></h1>
+    <p class="fecha-portada reveal" id="fechaPortada">23 DE OCTUBRE DE 2026
+8:15 P. M.</p>
+    <svg class="glit g-silver gs1"><use href="#star"/></svg>
+    <svg class="glit g-lila gs2"><use href="#star"/></svg>
+    <svg class="glit g-silver gs3"><use href="#star"/></svg>
+    <svg class="glit g-pink gs4"><use href="#star"/></svg>
+    <svg class="globo float"><use href="#heart"/></svg>
+    <figure class="foto-portada reveal"><img id="imgPortada" src="assets/img/portada.png" onerror="this.closest('figure').classList.add('sin-img')" alt="Foto de la cumpleañera"><span class="ph">Tu foto aquí<br><small>assets/img/portada.png</small></span></figure>
+  </section>
+
+  <!-- ===== DRESS CODE ===== -->
+  <!-- EDITA AQUÍ: título "Dresscode", frase y nota -->
+  <section class="dress" id="dresscode">
+    <h2 class="sticker-txt script reveal" id="dcTitulo">Dresscode</h2>
+    <p class="sticker-txt script frase reveal" id="dcFrase">Denim, Neutro y Chill</p>
+    <div class="collages">
+      <figure class="polaroid p1 reveal"><img id="imgO1" src="assets/img/outfit-1.jpg" onerror="this.closest('figure').classList.add('sin-img')" alt="Inspiración de outfits 1"><span class="ph">outfit-1.jpg</span></figure>
+      <figure class="polaroid p2 reveal"><img id="imgO2" src="assets/img/outfit-2.jpg" onerror="this.closest('figure').classList.add('sin-img')" alt="Inspiración de outfits 2"><span class="ph">outfit-2.jpg</span></figure>
+      <svg class="glit g-pink gd1"><use href="#star"/></svg>
+      <svg class="glit g-silver gd2"><use href="#star"/></svg>
+      <svg class="glit g-pink gd3"><use href="#star"/></svg>
+    </div>
+    <div class="dc-nota reveal">
+      <p class="dc-cita">“El código es fácil: mezclilla + tonos neutros. No es una pasarela, pero tampoco queremos que vengas vestido como si fueras a reparar el tinaco.” 😭</p>
+      <ul class="dc-reglas"><li>NO COLOR NEGRO</li><li>PUEDES LLEVAR SHORTS</li></ul>
+      <p class="dc-cierre">Ponte guap@, trae hambre y llega con una</p>
+      <p class="dc-sonrisota">SONRISOTA</p>
+    </div>
+  </section>
+
+  <!-- ===== EVENTO + RSVP ===== -->
+  <!-- EDITA AQUÍ: fecha, hora, dirección, enlace de Maps y mapa -->
+  <section class="evento" id="evento">
+    <div class="hoja2" data-tear><div class="papel-in"></div></div>
+    <div class="sticker disco-w disco-2 float">
+      <div class="disco"><svg class="bow bow-disco"><use href="#bow"/></svg></div>
+      <svg class="st s1 pk"><use href="#star"/></svg><svg class="st s2 pk"><use href="#star"/></svg><svg class="st s3 pk"><use href="#star"/></svg>
+    </div>
+    <div class="ev-info reveal">
+      <h2 class="sticker-txt script">Ubicación</h2>
+      <p class="ev-fecha" id="evFecha">Viernes 23 de octubre de 2026</p>
+      <p class="ev-hora" id="evHora">8:15 P. M.</p>
+      <p class="ev-dir" id="evDir">Calle 22 x 65 8 #180, col. Francisco Villa Oriente</p>
+    </div>
+    <a class="mapa-img reveal" id="mapa" href="https://maps.app.goo.gl/gSnY37FK9VLphjJ3A" target="_blank" rel="noopener" aria-label="Abrir ubicación en Google Maps"><img src="assets/img/mapa.jpg" alt="Foto del lugar" onerror="this.parentNode.classList.add('sin-img')"><span class="ph-mapa">📍 Toca para ver el mapa</span></a>
+    <a class="btn btn-mapa reveal" id="btnMapa" href="https://maps.app.goo.gl/gSnY37FK9VLphjJ3A" target="_blank" rel="noopener">VER UBICACIÓN EN GOOGLE MAPS</a>
+
+    <div class="rsvp reveal" id="rsvp">
+      <h2 class="sticker-txt script">¿Me acompañas en mis 18?</h2>
+      <p class="rsvp-intro">Me encantaría compartir esta noche contigo. Confirma tu asistencia para ayudarme a organizar todo con mucho cariño. 💗</p>
+      <form id="form" novalidate>
+        <label class="campo"><span>Nombre completo</span>
+          <input id="nombre" name="nombre" autocomplete="name" maxlength="80" placeholder="Tu nombre y apellido">
+          <em class="err" id="eNombre" role="alert"></em></label>
+        <fieldset class="campo"><legend>¿Asistirás a la cenita?</legend>
+          <label class="op"><input type="radio" name="asiste" value="confirmado"><span>Sí, ¡ahí estaré!</span></label>
+          <label class="op"><input type="radio" name="asiste" value="no_asistira"><span>Lo siento, no podré asistir.</span></label>
+          <em class="err" id="eAsiste" role="alert"></em></fieldset>
+        <div class="campo" id="campoTotal"><span>¿Cuántas personas asistirán en total, incluyéndote?</span>
+          <div class="stepper"><button type="button" id="menos" aria-label="Menos personas">−</button>
+            <input id="total" type="number" inputmode="numeric" min="1" step="1" value="1" aria-label="Total de personas">
+            <button type="button" id="mas" aria-label="Más personas">+</button></div>
+          <em class="err" id="eTotal" role="alert"></em></div>
+        <p class="aviso" id="aviso" role="status"></p>
+        <button class="btn btn-enviar" id="enviar" type="submit">Confirmar asistencia</button>
+      </form>
+      <div class="exito" id="exito" hidden>
+        <svg class="conf c1"><use href="#star"/></svg><svg class="conf c2"><use href="#star"/></svg><svg class="conf c3"><use href="#star"/></svg>
+        <p class="exito-t" id="exitoT"></p>
+        <button class="btn btn-sec" id="editar" type="button">Corregir mi respuesta</button>
+      </div>
+    </div>
+    <svg class="sticker bow bow-br float"><use href="#bow"/></svg>
+  </section>
+</main>
+<button class="musica" id="musica" hidden aria-label="Activar música">♪</button>
+<script src="firebase-config.js?v=5"></script>
+<script src="app.js?v=5"></script>
+</body>
+</html>
